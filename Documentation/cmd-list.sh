@@ -11,7 +11,7 @@ BEGIN{state=0}
 {print $0; exit}
 '`
 
-	len=`expr length "${cmd}"`
+	len=`echo "${cmd}" | awk '{ print length }'`
 
 	if [ -z "$desc" ]; then
 		echo "No description found in $cmd.txt" >&2
